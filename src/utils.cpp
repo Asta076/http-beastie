@@ -1,4 +1,5 @@
 #include "utils.hpp"
+
 #include <fstream>
 #include <sstream>
 
@@ -14,18 +15,17 @@ http::response<http::string_body> handle_request(const http::request<http::strin
   res.set(http::field::server, "http-beastie");
   res.set(http::field::content_type, "text/html");
 
-  if (req.method() == http::verb::get) {
-    if (req.target() == "/") {
+  if (req.target() == "/") {
     res.result(http::status::ok);
     res.body() = read_file("static/index.html");
-    } else {
-      res.result(http::status::not_found);
-      res.body() = "<h1 style=\"text-align: center;\">404 Not Found</h1>";
-    }
+
+  } else if (req.target() == "/mohammed") {
+    res.result(http::status::ok);
+    res.body() = read_file("static/mohammed.html");
+
   } else {
-    res.result(http::status::method_not_allowed);
-    res.set(http::field::allow, "GET");
-    res.body() = "<h1 style=\"text-align: center;\">405 Method Not Allowed</h1>";
+    res.result(http::status::not_found);
+    res.body() = "<h1 style=\"text-align: center;\">404 Not Found</h1>";
   }
 
   res.prepare_payload();
@@ -33,14 +33,14 @@ http::response<http::string_body> handle_request(const http::request<http::strin
 }
 
 std::string read_file(const std::string& path) {
-    std::ifstream file(path);
+  std::ifstream file(path);
 
-    if (!file.is_open()) {
-        return "File not found";
-    }
+  if (!file.is_open()) {
+    return "File not found";
+  }
 
-    std::stringstream buffer;
-    buffer << file.rdbuf();
+  std::stringstream buffer;
+  buffer << file.rdbuf();
 
-    return buffer.str();
+  return buffer.str();
 }
