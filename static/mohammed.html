@@ -1,13 +1,232 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Omar Mohammed</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background:
+                radial-gradient(circle at top left, #1e3a8a 0%, transparent 30%),
+                radial-gradient(circle at bottom right, #7c3aed 0%, transparent 30%),
+                linear-gradient(135deg, #0f172a, #111827, #1e293b);
+            color: #f8fafc;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            overflow-x: hidden;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 950px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(16px);
+            border-radius: 28px;
+            padding: 50px;
+            box-shadow:
+                0 10px 40px rgba(0, 0, 0, 0.4),
+                0 0 60px rgba(124, 58, 237, 0.15);
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .top {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .avatar {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 52px;
+            font-weight: 700;
+            color: white;
+            box-shadow: 0 0 30px rgba(139, 92, 246, 0.45);
+        }
+
+        h1 {
+            font-size: 3rem;
+            line-height: 1.1;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #cbd5e1;
+        }
+
+        .bio {
+            margin-top: 10px;
+            font-size: 1.05rem;
+            line-height: 1.9;
+            color: #e2e8f0;
+        }
+
+        .grid {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 22px;
+        }
+
+        .box {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+            padding: 24px;
+            transition: 0.3s ease;
+        }
+
+        .box:hover {
+            transform: translateY(-6px);
+            background: rgba(255, 255, 255, 0.09);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+        }
+
+        .box h2 {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            color: #93c5fd;
+        }
+
+        .box p {
+            color: #dbeafe;
+            line-height: 1.7;
+            font-size: 0.96rem;
+        }
+
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        .highlight {
+            color: #a78bfa;
+            font-weight: 600;
+        }
+
+        @media (max-width: 700px) {
+            .card {
+                padding: 30px;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .top {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .avatar {
+                width: 110px;
+                height: 110px;
+                font-size: 42px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Omar Mohammed</h1>
-    <p>
-        I am a Computer Engineering student at the American University in Cairo.
-        I am interested in software development, systems programming,
-        and problem solving.
-    </p>
+
+    <div class="card">
+
+        <div class="top">
+            <div class="avatar">OM</div>
+
+            <div>
+                <h1>Omar Mohammed</h1>
+                <p class="subtitle">
+                    Computer Engineering Student • Developer • Tech Enthusiast
+                </p>
+            </div>
+        </div>
+
+        <div class="bio">
+            Hello! I'm <span class="highlight">Omar Mohammed</span>, a Computer Engineering
+            student passionate about software development, problem solving, and building
+            modern applications. I enjoy working with C++, web technologies, and software
+            architecture while continuously exploring new tools and technologies.
+
+            <br><br>
+
+            Beyond programming, I am interested in user experience, digital culture,
+            and how technology impacts people’s everyday lives. I enjoy collaborating
+            on projects, learning through experimentation, and constantly improving my
+            technical and creative skills.
+        </div>
+
+        <div class="grid">
+
+            <div class="box">
+                <h2>💻 Skills</h2>
+                <p>
+                    C++, Object-Oriented Programming, Git, Linux,
+                    Web Development, Data Structures, Algorithms,
+                    and Software Design.
+                </p>
+            </div>
+
+            <div class="box">
+                <h2>🚀 Interests</h2>
+                <p>
+                    Backend systems, UI/UX design, game development,
+                    open-source projects, and modern software engineering.
+                </p>
+            </div>
+
+            <div class="box">
+                <h2>🎯 Goals</h2>
+                <p>
+                    To become a skilled software engineer, contribute
+                    to impactful projects, and create technology that
+                    improves people’s experiences.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="footer">
+            Built with HTML & CSS • Served from your C++ HTTP Server
+        </div>
+
+    </div>
+
 </body>
 </html>
